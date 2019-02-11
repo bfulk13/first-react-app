@@ -47,17 +47,7 @@ class Item extends Component {
     return (
       <div className="item">
       <div className="itemButtons"
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   alignItems: "center",
-        //   flexDirection: "column",
-        //   marginTop: "5px",
-        //   marginRight: "20px",
-        //   marginLeft: "20px",
-        //   border: "solid grey 1px",
-          
-        // }}
+      
       >
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
@@ -66,13 +56,7 @@ class Item extends Component {
      <div>
         {this.state.editing ? (
           <div
-            // style={{
-            //   display: "flex",
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            //   flexDirection: "column",
-            //   marginTop: "20px"
-            // }}
+         
           >
             new title: {" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "}            
             <input className="itemButtonHover" style={{marginTop: "20px"}} value={this.state.title} onChange={this.handleTitleChange} />
@@ -82,13 +66,7 @@ class Item extends Component {
         )}
         {this.state.editing ? (
           <div
-            // style={{
-            //   display: "flex",
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            //   flexDirection: "column",
-            //   marginTop: "20px"
-            // }}
+         
           >
             description:
             <input className="itemButtonHover" style={{marginTop: "20px", marginBottom: "20px"}}

@@ -9,6 +9,7 @@ import "./App.css";
 import "./index.css";
 import Image from "./components/Image"
 import BonusPointButton from "./components/BonusPointButton";
+import MusicButton from "./components/MusicButton"
 
 class App extends Component {
   constructor() {
@@ -135,13 +136,13 @@ class App extends Component {
               <Search handleChange={this.searchFunction} />
             </div>
           </div>
-          <div className="image1"><Image /> </div>
-          <div className="image2"><Image /> </div>
+          <div className="image1"><Image /> <div><BonusPointButton /></div> </div>
+          <div className="image2"><Image /><MusicButton /> </div>
           <div className="smallContainer">{mappedListItems}</div>
           
         </div>
         <div><Footer /> </div>
-        <div><BonusPointButton /></div>
+        
       </div>
     );
   }
