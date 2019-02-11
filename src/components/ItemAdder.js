@@ -36,22 +36,22 @@ class ItemAdder extends Component {
   render() {
     return (
       <div>
-        <input
+        <input className="itemButtonHover"
           type="text"
           placeholder="Enter Item Title"
           onChange={e => this.handleTitle(e.target.value)}
           value={this.state.title}
         />
-        <input
+        <input className="itemButtonHover"
           type="text"
           placeholder="Enter Item Description"
           onChange={e => this.handleDescription(e.target.value)}
           value={this.state.description}
         />
-        <button
-          onClick={this.handleAddClick}
+        <button className="addButton"
+          onClick={this.handleAddClick} 
         >
-          Add Item
+         Add Item
         </button>
       </div>
     );

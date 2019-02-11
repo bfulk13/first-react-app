@@ -6,6 +6,8 @@ const list = [
   }
 ];
 
+let incrementingID = 1
+
 module.exports = {
   getListItems: (req, res) => {
     res.status(200).send(list);
@@ -13,15 +15,15 @@ module.exports = {
 
   createListItem: (req, res) => {
     const { title, description } = req.body;
-    const id = list.length + 1;
+    // const id = list.length + 1;
 
-    let newListItem = {
-      id,
+    let listItem = {
+      id: incrementingID++,
       title,
       description
     };
 
-    list.push(newListItem);
+    list.push(listItem);
 
     res.status(200).send(list);
   },
@@ -52,5 +54,33 @@ module.exports = {
     list.splice(index, 1, foundItem);
 
     res.status(200).send(list);
+  },
+
+  moveListItem: (req, res) => {
+    const {id} = req.params
+    const {direction} = req.body
+
+
+    const listPos = list.findIndex(item => item.id == id);
+
+    if(direction == "up") { 
+      if(listPos !== 0) {
+        let itemInFront = list[listPos-1]
+        list[listPos-1] = list[listPos]
+        list[listPos] = itemInFront
+      }
+    } 
+    else {
+      if(listPos !== list.length-1) {
+        let itemBehind = list[listPos+1]
+        list[listPos+1] = list[listPos]
+        list[listPos] = itemBehind
+      }
+    }
+      
+
+    res.status(200).send(list)
+
   }
+
 };

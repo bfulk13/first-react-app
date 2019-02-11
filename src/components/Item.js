@@ -40,23 +40,30 @@ class Item extends Component {
     });
   };
 
+
+
   render() {
-    const { item, deleteListItem } = this.props;
+    const { item, deleteListItem, handleMove } = this.props;
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          marginTop: "5px",
-          marginRight: "20px",
-          marginLeft: "20px",
-          border: "solid grey 1px",
+      <div className="item">
+      <div className="itemButtons"
+        // style={{
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        //   flexDirection: "column",
+        //   marginTop: "5px",
+        //   marginRight: "20px",
+        //   marginLeft: "20px",
+        //   border: "solid grey 1px",
           
-        }}
+        // }}
       >
-     
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "up")}><i class="fa fa-arrow-up"></i></button>
+      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "down")}><i class="fa fa-arrow-down"></i></button>
+     <div>
         {this.state.editing ? (
           <div
             // style={{
@@ -67,8 +74,8 @@ class Item extends Component {
             //   marginTop: "20px"
             // }}
           >
-            title:
-            <input style={{marginTop: "20px"}} value={this.state.title} onChange={this.handleTitleChange} />
+            new title: {" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "+" "}            
+            <input className="itemButtonHover" style={{marginTop: "20px"}} value={this.state.title} onChange={this.handleTitleChange} />
           </div>
         ) : (
           <h3 style={{marginBottom: 0}}> {item.title}</h3>
@@ -84,7 +91,7 @@ class Item extends Component {
             // }}
           >
             description:
-            <input style={{marginTop: "20px", marginBottom: "20px"}}
+            <input className="itemButtonHover" style={{marginTop: "20px", marginBottom: "20px"}}
               value={this.state.description}
               onChange={this.handleDescriptionChange}
             />
@@ -92,9 +99,9 @@ class Item extends Component {
         ) : (
           <p>  {item.description}</p>
         )}
-        <button onClick={() => deleteListItem(item.id)}>Delete Item</button>
+        <button className="itemButtonHover" onClick={() => deleteListItem(item.id)}><i class="fa fa-trash"></i></button>
         {this.state.editing ? (
-          <button
+          <button className="itemButtonHover"
             onClick={() =>
               this.updateListItem(
                 item.id,
@@ -103,12 +110,14 @@ class Item extends Component {
               )
             }
           >
-            Save Item
+            <i class="fa fa-save"></i>
           </button>
         ) : (
-          <button onClick={() => this.edit()}>Update Item</button>
+          <button className="itemButtonHover" onClick={() => this.edit()}><i class="fa fa-edit"></i></button>
         )}
+        </div>
        
+      </div>
       </div>
     );
   }

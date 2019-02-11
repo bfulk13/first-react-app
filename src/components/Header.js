@@ -27,11 +27,11 @@ class Header extends Component {
         return (
           <div>
               <h1 style={{marginBottom: 5, background: "linear-gradient(to right, orange , yellow, green, cyan, blue, violet)",
-  webkitBackgroundClip: "text",
-  webkitTextFillColor: "transparent",}}>Ron Swansonism Of The Day</h1>
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",}}>Ron Swansonism Of The Day</h1>
           <div style={{background: "linear-gradient(to left, red, orange, yellow)",
-  webkitBackgroundClip: "text",
-  webkitTextFillColor: "transparent",}}>{quoteString}</div>
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",}}>{quoteString}</div>
           </div>
         );
       }
