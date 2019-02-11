@@ -84,7 +84,8 @@
 }
 
 .itemButtons:hover {
-  border: solid purple 2px
+  border: solid purple 2px;
+  box-shadow: 0 0 10px purple;
 }
 
 
@@ -193,3 +194,15 @@
 }
 
 
+.weather {
+  position: absolute;
+  left: 85%;
+  top: 70%;
+  border: solid 1px red;
+  box-shadow: 0 0 30px red;
+  color: rgb(255, 115, 0);
+  
+  
+  
+
+}

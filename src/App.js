@@ -9,7 +9,8 @@ import "./App.css";
 import "./index.css";
 import Image from "./components/Image"
 import BonusPointButton from "./components/BonusPointButton";
-import MusicButton from "./components/MusicButton"
+import MusicButton from "./components/MusicButton";
+import Weather from "./components/Weather"
 
 class App extends Component {
   constructor() {
@@ -142,6 +143,7 @@ class App extends Component {
           
         </div>
         <div><Footer /> </div>
+        <div className="weather"><Weather /></div> 
         
       </div>
     );

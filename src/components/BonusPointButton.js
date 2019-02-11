@@ -27,7 +27,7 @@ class BonusPointButton extends Component {
           this.setState({
               gif: ""
           })
-        }, 3000);
+        }, 5000);
       }
 
       render() {

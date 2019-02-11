@@ -51,8 +51,8 @@ class Item extends Component {
       >
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
-      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "up")}><i class="fa fa-arrow-up"></i></button>
-      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "down")}><i class="fa fa-arrow-down"></i></button>
+      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "up")}><i className="fa fa-arrow-up"></i></button>
+      <button className="itemButtonHover" onClick={()=> handleMove(item.id, "down")}><i className="fa fa-arrow-down"></i></button>
      <div>
         {this.state.editing ? (
           <div
@@ -77,7 +77,7 @@ class Item extends Component {
         ) : (
           <p>  {item.description}</p>
         )}
-        <button className="itemButtonHover" onClick={() => deleteListItem(item.id)}><i class="fa fa-trash"></i></button>
+        <button className="itemButtonHover" onClick={() => deleteListItem(item.id)}><i className="fa fa-trash"></i></button>
         {this.state.editing ? (
           <button className="itemButtonHover"
             onClick={() =>
